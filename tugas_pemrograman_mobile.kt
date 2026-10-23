@@ -24,9 +24,22 @@ class StudentCard(
 }
 
 fun main() {
-    val kartu = StudentCard("2409020073", "Prabowo widoto", "pemrograman mobile")
-    println(kartu.status)
-    kartu.ambilSks(6)
-    println(kartu.ringkasan())
-    println(kartu.status)
+    val daftar = listOf(
+        StudentCard("2409020073", "Prabowo widoto", "pemrograman mobile"),
+        StudentCard("2409020074", "Budi Santoso", "pemrograman mobile"),
+        StudentCard("2409020075", "Citra Lestari", "pemrograman mobile"),
+        StudentCard("2409020076", "Dimas Pratama", "pemrograman mobile")
+    )
+
+    daftar[0].ambilSks(6)
+    daftar[1].ambilSks(9)
+    daftar[2].ambilSks(0)   // tidak berubah karena jumlahnya 0
+    daftar[3].ambilSks(24)
+    daftar[3].ambilSks(1)   // ditolak karena melebihi 24
+
+    for (kartu in daftar) {
+        println(kartu.ringkasan())
+        println("Status: ${kartu.status}")
+        println()
+    }
 }
